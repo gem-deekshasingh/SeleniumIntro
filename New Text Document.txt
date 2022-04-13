@@ -1,0 +1,39 @@
+3- Try to create xpaths of svg elements
+ans: //*[local-name()='svg'].
+
+4- Try to create xpaths of elements that disappears after a short span of time
+ans: 
+  wait = WebDriverWait(driver, 10)
+  wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'your text1')]")))
+
+
+5- Why do we need axes methods to create xpaths? Try to create different xpaths using axes methods.
+ans:
+ XPath Axes are the methods used to find dynamic elements, which otherwise not possible by normal XPath
+ method having no ID , Classname, Name, etc. Axes methods are used to find those elements, which dynamically
+ change on refresh or any other operations.
+
+
+  1.)Syntax and usage of the ancestor in XPath:
+
+  //tag[@attribute ='Attribute_Value']//ancestor::parent_node
+
+  2.)Syntax and usage of the child axis in XPath is:
+
+  //tag[@attribute ='Attribute_Value']//child::child_node
+  
+  3.)Syntax and usage of the descendant axis in the XPath:
+
+  //node[attribute='value of attribute']//descendant::attribute
+
+  4.)Syntax and usage Parent Axis in XPath:
+
+  //tag[@attribute ='Attribute_Value']//ancestor::parent_node
+
+  5.)Syntax and usage of the following axis in the XPath:
+
+  //node[attribute='value of attribute']//following::attribute
+
+  6.)Syntax and usage of the following-sibling axis in the XPath:
+
+  //node[attribute='value of attribute']//following-sibling::attribute
